@@ -120,6 +120,8 @@ in
     '';
   };
 
+  hardware.nitrokey.enable = true;
+
   nix = {
 
     autoOptimiseStore = true;
