@@ -8,6 +8,8 @@ in
 
   environment = {
 
+    variables.CDPATH = ["." "~"];
+
     systemPackages = with pkgs; [
       binutils
       coreutils
@@ -124,6 +126,8 @@ in
       eval "$(${pkgs.direnv}/bin/direnv hook bash)"
     '';
   };
+
+  programs.autojump.enable = true;
 
   services.earlyoom.enable = true;
 
