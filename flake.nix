@@ -27,8 +27,6 @@
     digga.lib.mkFlake {
       inherit self inputs;
 
-      channelsConfig = { allowUnfree = true; };
-
       channels = {
         nixos = {
           imports = [ (digga.lib.importers.overlays ./overlays) ];
