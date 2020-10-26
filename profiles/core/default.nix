@@ -21,6 +21,7 @@ in
       gptfdisk
       iputils
       jq
+      libarchive
       manix
       moreutils
       nix-index
@@ -42,6 +43,9 @@ in
         "..." = "cd ../..";
         "...." = "cd ../../..";
         "....." = "cd ../../../..";
+
+        # bsdtar (multi-format archive)
+        tar = "bsdtar";
 
         # git
         g = "git";
