@@ -166,6 +166,8 @@ in
 
   programs.autojump.enable = true;
 
+  security.pam.enableSSHAgentAuth = true;
+
   services.earlyoom.enable = true;
 
   services.openssh = {
