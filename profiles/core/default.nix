@@ -185,4 +185,8 @@ in
 
   users.defaultUserShell = "/run/current-system/sw/bin/fish";
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 }
