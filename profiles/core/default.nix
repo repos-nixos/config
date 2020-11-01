@@ -32,6 +32,7 @@ in
       dnsutils
       dosfstools
       fd
+      file
       git
       gptfdisk
       htop

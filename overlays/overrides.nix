@@ -8,11 +8,14 @@ channels: final: prev: {
     dhall
     discord
     element-desktop
+    firefox
     manix
     nixpkgs-fmt
+    obs-studio
     qutebrowser
     signal-desktop
-    starship;
+    starship
+    tor-browser-bundle-bin;
 
 
   haskellPackages = prev.haskellPackages.override {
