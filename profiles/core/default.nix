@@ -34,6 +34,7 @@ in
       fd
       file
       git
+      gitAndTools.git-subrepo
       gptfdisk
       htop
       iputils
