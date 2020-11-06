@@ -15,7 +15,8 @@ channels: final: prev: {
     qutebrowser
     signal-desktop
     starship
-    tor-browser-bundle-bin;
+    tor-browser-bundle-bin
+    vscodium;
 
 
   haskellPackages = prev.haskellPackages.override {
