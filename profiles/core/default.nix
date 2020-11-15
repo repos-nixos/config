@@ -4,6 +4,8 @@ in
 {
   imports = [ ../cachix ];
 
+  boot.cleanTmpDir = true;
+
   nix.systemFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
 
   i18n.defaultLocale = "fr_CH.UTF-8";
