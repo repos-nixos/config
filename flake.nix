@@ -27,6 +27,8 @@
     digga.lib.mkFlake {
       inherit self inputs;
 
+      channelsConfig = import nixpkgs/config.nix { inherit (nixos) lib; };
+
       channels = {
         nixos = {
           imports = [ (digga.lib.importers.overlays ./overlays) ];
