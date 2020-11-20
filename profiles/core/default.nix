@@ -37,6 +37,7 @@ in
       file
       git
       gitAndTools.git-subrepo
+      gitAndTools.git-crypt
       gptfdisk
       htop
       iputils
