@@ -150,8 +150,6 @@ in
 
     gc.automatic = true;
 
-    optimise.automatic = true;
-
     useSandbox = true;
 
     allowedUsers = [ "nix-ssh" "@wheel" ];
