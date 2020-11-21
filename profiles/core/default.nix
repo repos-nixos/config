@@ -174,6 +174,8 @@ in
       ];
     };
 
+    signStorePaths = true;
+
     binaryCaches = lib.optional (config.networking.hostName != "hadron" && !config.special.roaming) "ssh-ng://nix-ssh@hadron";
   };
 
