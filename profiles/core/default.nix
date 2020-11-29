@@ -209,6 +209,4 @@ in
     challengeResponseAuthentication = false;
     passwordAuthentication = false;
   };
-
-  users.defaultUserShell = "/run/current-system/sw/bin/fish";
 }
