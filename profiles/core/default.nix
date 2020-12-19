@@ -157,6 +157,8 @@ in
       keep-outputs = true
       keep-derivations = true
       fallback = true
+
+      builders-use-substitutes = true
     '';
 
     binaryCaches = lib.mkAfter (lib.optional (config.networking.hostName != "hadron" && !config.special.roaming) "ssh-ng://nix-ssh@hadron");
