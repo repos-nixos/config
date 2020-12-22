@@ -10,14 +10,12 @@ channels: final: prev: {
     discord
     element-desktop
     firefox
-    firefox-bin
     manix
     nixpkgs-fmt
     obs-studio
     qutebrowser
     signal-desktop
     starship
-    thunderbird-bin
     tor-browser-bundle-bin
     vscode-with-extensions
     vscodium;
