@@ -1,6 +1,7 @@
 [
     ./custom-layouts
     ./firefox-captive-browser
+    ./nix-sandbox-ccache
     ./printers
     ./sign-store-paths
     ./special
