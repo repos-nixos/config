@@ -217,7 +217,7 @@ in
     packageNames = [
       "webkitgtk"  # takes hours to build on Hydra
 
-      "ckbcomp" "flatpak" "xdg-desktop-portal" "xwayland"  # rebuilt for custom layout
+      "ckbcomp" "flatpak" "ostree" "xdg-desktop-portal" "xwayland"  # rebuilt for custom layout
     ];
   };
 
