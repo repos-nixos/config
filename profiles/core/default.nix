@@ -47,6 +47,7 @@ in
       nix-index
       nmap
       pass-otp
+      qrencode
       ripgrep
       skim
       tealdeer
