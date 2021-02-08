@@ -10,6 +10,7 @@ channels: final: prev: {
     discord
     element-desktop
     firefox
+    gotop
     manix
     nixpkgs-fmt
     obs-studio
