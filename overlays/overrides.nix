@@ -9,7 +9,6 @@ channels: final: prev: {
     dhall
     discord
     element-desktop
-    firefox
     gotop
     manix
     nixpkgs-fmt
