@@ -72,6 +72,33 @@
         profiles = [ ./profiles ./users ];
         suites = { profiles, users, ... }: with profiles; rec {
           base = [ core users.nixos users.root ];
+          gnome3 = [ graphical graphical.gnome3 ];
+          allTools = with tools; [
+            tools # the root
+            jdk
+            podman
+            wireshark
+          ];
+
+          workstation = base ++ allTools ++ [
+            users.louis
+            users.louis.singleUser
+            misc.sign-store-paths
+            network.nfs
+            network.printers
+            network.privoxy
+            network.keybase
+          ];
+
+          laptop = workstation ++ [
+            profiles.laptop
+          ];
+
+          buildServer = [
+            misc.sign-store-paths
+            network.nix-build-server
+            network.nix-serve
+          ];
         };
       };
 

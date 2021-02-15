@@ -2,7 +2,7 @@
 let inherit (lib) fileContents;
 in
 {
-  imports = [ ../cachix ];
+  imports = [ ../cachix ./trusted-machines.nix ];
 
   boot.cleanTmpDir = true;
 
