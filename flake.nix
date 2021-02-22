@@ -86,7 +86,6 @@
             misc.sign-store-paths
             network.nfs
             network.printers
-            network.privoxy
             network.keybase
           ];
 
