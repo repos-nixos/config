@@ -15,6 +15,7 @@
       darwin.inputs.nixpkgs.follows = "latest";
       home.url = "github:nix-community/home-manager";
       home.inputs.nixpkgs.follows = "nixos";
+      impermanence.url = "github:nix-community/impermanence";
       naersk.url = "github:nmattia/naersk";
       naersk.inputs.nixpkgs.follows = "latest";
       nixos-hardware.url = "github:nixos/nixos-hardware";
@@ -23,7 +24,7 @@
       pkgs.inputs.nixpkgs.follows = "nixos";
     };
 
-  outputs = inputs@{ self, pkgs, digga, nixos, ci-agent, home, nixos-hardware, nur, ... }:
+  outputs = inputs@{ self, pkgs, digga, nixos, ci-agent, home, impermanence, nixos-hardware, nur, ... }:
     digga.lib.mkFlake {
       inherit self inputs;
 
@@ -60,6 +61,7 @@
             { _module.args.ourLib = self.lib; }
             ci-agent.nixosModules.agent-profile
             home.nixosModules.home-manager
+            impermanence.nixosModules.impermanence
             ./modules/customBuilds.nix
           ];
         };
