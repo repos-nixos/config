@@ -7,10 +7,6 @@
       latest.url = "nixpkgs";
       digga.url = "github:divnix/digga";
 
-      ci-agent = {
-        url = "github:hercules-ci/hercules-ci-agent";
-        inputs = { nix-darwin.follows = "darwin"; nixos-20_09.follows = "nixos"; nixos-unstable.follows = "latest"; };
-      };
       darwin.url = "github:LnL7/nix-darwin";
       darwin.inputs.nixpkgs.follows = "latest";
       home.url = "github:nix-community/home-manager";
@@ -24,7 +20,7 @@
       pkgs.inputs.nixpkgs.follows = "nixos";
     };
 
-  outputs = inputs@{ self, pkgs, digga, nixos, ci-agent, home, impermanence, nixos-hardware, nur, ... }:
+  outputs = inputs@{ self, pkgs, digga, nixos, home, impermanence, nixos-hardware, nur, ... }:
     digga.lib.mkFlake {
       inherit self inputs;
 
@@ -59,7 +55,6 @@
           modules = ./modules/module-list.nix;
           externalModules = [
             { _module.args.ourLib = self.lib; }
-            ci-agent.nixosModules.agent-profile
             home.nixosModules.home-manager
             impermanence.nixosModules.impermanence
             ./modules/customBuilds.nix
