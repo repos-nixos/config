@@ -17,11 +17,11 @@ in
   environment = {
 
     variables = {
-      CDPATH = ["." "~"];
-      LESS = "-eRSX";  # e causes less to automatically exit when it reaches end-of-file.
-                       # R causes less to let color sequences through.
-                       # S causes less not to wrap long lines.
-                       # X causes less not to clear the screen.
+      CDPATH = [ "." "~" ];
+      LESS = "-eRSX"; # e causes less to automatically exit when it reaches end-of-file.
+      # R causes less to let color sequences through.
+      # S causes less not to wrap long lines.
+      # X causes less not to clear the screen.
       LESSOPEN = "|${pkgs.lesspipe}/bin/lesspipe.sh %s";
       PAGER = "less";
     };
@@ -72,7 +72,7 @@ in
 
         e = "$EDITOR";
 
-        l = pkgs.writers.writeC "l" {} ./l.c;
+        l = pkgs.writers.writeC "l" { } ./l.c;
 
         # git
         g = "git";
@@ -103,7 +103,7 @@ in
         nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
 
         # sudo
-        s = ifSudo (pkgs.writers.writeC "s" {} ./s.c);
+        s = ifSudo (pkgs.writers.writeC "s" { } ./s.c);
         se = ifSudo "sudoedit";
 
         # top
@@ -119,8 +119,8 @@ in
         dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
 
-	# Python
-	py = "python3";
+        # Python
+        py = "python3";
       };
   };
 
@@ -134,11 +134,11 @@ in
 
     # lowercase numerals
     fontconfig.localConf = ''
-    <match target="font">
-      <edit name="fontfeatures" mode="append">
-        <string>onum on</string>
-      </edit>
-    </match>
+      <match target="font">
+        <edit name="fontfeatures" mode="append">
+          <string>onum on</string>
+        </edit>
+      </match>
     '';
   };
 
@@ -153,7 +153,7 @@ in
     trustedUsers = [ "root" "@wheel" ];
 
     extraOptions = ''
-      min-free = ${toString (5  * 1024 * 1024 * 1024)}
+      min-free = ${toString (5 * 1024 * 1024 * 1024)}
       max-free = ${toString (10 * 1024 * 1024 * 1024)}
       keep-outputs = true
       keep-derivations = true
@@ -195,10 +195,9 @@ in
     # allows After dependencies to fire after the GC is done.
     Type = "oneshot";
   };
-  systemd.services.nix-optimise-store = {
+  systemd.services.nix-optimise = {
     wantedBy = [ "nix-gc.service" ];
     after = [ "nix-gc.service" ];
-    script = "exec ${config.nix.package.out}/bin/nix-store --optimise";
   };
 
   services.earlyoom.enable = true;
@@ -216,7 +215,11 @@ in
   programs.ccache = {
     enable = true;
     packageNames = [
-      "ckbcomp" "flatpak" "ostree" "xdg-desktop-portal" "xwayland"  # rebuilt for custom layout
+      "ckbcomp"
+      "flatpak"
+      "ostree"
+      "xdg-desktop-portal"
+      "xwayland" # rebuilt for custom layout
     ];
   };
 
