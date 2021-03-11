@@ -47,6 +47,7 @@ in
       nix-index
       nmap
       pass-otp
+      prs
       python3
       qrencode
       ripgrep

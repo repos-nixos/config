@@ -13,6 +13,7 @@ channels: final: prev: {
     manix
     nixpkgs-fmt
     obs-studio
+    prs
     qutebrowser
     signal-desktop
     spacevim
