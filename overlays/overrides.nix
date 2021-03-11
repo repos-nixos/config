@@ -17,6 +17,7 @@ channels: final: prev: {
     signal-desktop
     spacevim
     starship
+    tipp10
     tor-browser-bundle-bin;
 
 
