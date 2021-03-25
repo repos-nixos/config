@@ -26,6 +26,7 @@
   };
   home.packages = with pkgs.gitAndTools; [
     git-subrepo
+    git-secret
     git-crypt
     tig
   ];
