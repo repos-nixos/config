@@ -11,6 +11,7 @@ channels: final: prev: {
     element-desktop
     gotop
     manix
+    multimc
     nixpkgs-fmt
     obs-studio
     prs
