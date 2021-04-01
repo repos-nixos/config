@@ -1,3 +1,6 @@
+{ pkgs, ... }:
+
 {
-  programs.teck-programmer.enable = true;
+  hardware.keyboard.teck.enable = true;
+  environment.systemPackages = [ pkgs.teck-programmer ];
 }
