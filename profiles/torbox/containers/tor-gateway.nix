@@ -2,8 +2,8 @@ let
   hostAddress = "10.0.4.1";
   localAddress = "10.0.4.2";
   forwardPorts = [
-    8118  # privoxy
-    9050  # isolated tor
+    8118 # privoxy
+    9050 # isolated tor
   ];
 in
 {
@@ -12,15 +12,19 @@ in
     inherit hostAddress localAddress;
     forwardPorts = map (p: { hostPort = p; }) forwardPorts;
 
-    config = { pkgs, ...}: {
+    config = { pkgs, ... }: {
       services.tor = {
         enable = true;
         client.enable = true;
-        client.socksListenAddress = "0.0.0.0:9050";
-        client.privoxy.enable = true;
+        client.socksListenAddress = { IsolateDestAddr = true; addr = "0.0.0.0"; port = 9050; };
         controlSocket.enable = true;
       };
-      services.privoxy.listenAddress = "0.0.0.0:8118";
+
+      services.privoxy = {
+        enable = true;
+        enableTor = true;
+        settings.listen-address = "0.0.0.0:8118";
+      };
 
       environment.systemPackages = with pkgs; [ nyx ];
 

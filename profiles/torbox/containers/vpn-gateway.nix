@@ -9,7 +9,7 @@ let
   nameserverAddress = "193.138.218.74";  # Mullvad's DNS
   mullvadProxyAddress = "10.8.0.1:1080";  # mullvad's enclave proxy
   forwardPorts = [
-    8118  # privoxy
+    8118 # privoxy
   ];
 in
 {
@@ -18,20 +18,18 @@ in
     inherit hostAddress localAddress;
     forwardPorts = map (p: { hostPort = p; }) forwardPorts;
 
-    enableTun = true;  # needed for OpenVPN
+    enableTun = true; # needed for OpenVPN
 
-    config = { pkgs, ...}: {
-      networking.nameservers = [ nameserverAddress ];  # needed for OpenVPN bootstrapping
+    config = { pkgs, ... }: {
+      networking.nameservers = [ nameserverAddress ]; # needed for OpenVPN bootstrapping
 
       services.mullvad-vpn.enable = true;
       environment.systemPackages = with pkgs; [ mullvad-vpn ];
 
       services.privoxy = {
         enable = true;
-        listenAddress = "0.0.0.0:8118";
-        extraConfig = ''
-          forward-socks5 / ${mullvadProxyAddress} .
-        '';
+        settings.listen-address = "0.0.0.0:8118";
+        settings.forward-socks5 = "/ ${mullvadProxyAddress} .";
       };
 
       networking.firewall.allowedTCPPorts = forwardPorts;

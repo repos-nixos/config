@@ -7,8 +7,8 @@ let
   torsocksUrl = "socks5h://${torsocksAddress}";
   privoxyUrl = "http://${hostAddress}:8118";
   forwardPorts = [
-    8118  # privoxy
-    9050  # isolated tor
+    8118 # privoxy
+    9050 # isolated tor
   ];
 in
 {
@@ -16,10 +16,10 @@ in
     privateNetwork = true;
     inherit hostAddress localAddress;
 
-    config = { pkgs, ...}: {
+    config = { pkgs, ... }: {
       users.users.user = {
         isNormalUser = true;
-        uid = 1001;  # should be the same as my user
+        uid = 1001; # should be the same as my user
 
         packages = with pkgs; [ git brave xpra python3 neovim ];
       };
@@ -29,7 +29,7 @@ in
 
       services.keybase.enable = true;
 
-      services.mingetty.autologinUser = "user";
+      services.getty.autologinUser = "user";
 
       services.sshd.enable = true;
 

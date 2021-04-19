@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   environment.systemPackages = with pkgs; [
     gnome3.dconf-editor
@@ -9,6 +9,6 @@
     yaru-theme
   ];
 
-  services.gnome3.gnome-keyring.enable = lib.mkForce false; # conflicts w/ ssh
+  services.gnome.gnome-keyring.enable = lib.mkForce false; # conflicts w/ ssh
 }
 

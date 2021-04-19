@@ -69,7 +69,7 @@
         profiles = [ ./profiles ./users ];
         suites = { profiles, users, ... }: with profiles; rec {
           base = [ core users.nixos users.root ];
-          gnome3 = [ graphical graphical.gnome3 ];
+          gnome = [ graphical graphical.gnome ];
           allTools = with tools; [
             tools # the root
             jdk

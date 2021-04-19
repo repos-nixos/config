@@ -7,7 +7,7 @@
 {
   imports =
     suites.workstation ++
-    suites.gnome3 ++
+    suites.gnome ++
     suites.buildServer ++
     [
       # Include the results of the hardware scan.

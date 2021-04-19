@@ -5,5 +5,5 @@
     autoLogin.user = "louis";
   };
 
-  services.mingetty.autologinUser = "louis";
+  services.getty.autologinUser = "louis";
 }

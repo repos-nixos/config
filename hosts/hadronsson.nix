@@ -3,7 +3,7 @@
 {
   imports =
     suites.laptop ++
-    suites.gnome3 ++
+    suites.gnome ++
     [
       # Include the results of the hardware scan.
       hadronsson/hardware-configuration.nix

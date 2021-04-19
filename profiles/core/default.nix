@@ -212,26 +212,4 @@ in
     challengeResponseAuthentication = false;
     passwordAuthentication = false;
   };
-
-  programs.ccache = {
-    enable = true;
-    packageNames = [
-      "ckbcomp"
-      "flatpak"
-      "ostree"
-      "xdg-desktop-portal"
-      "xwayland" # rebuilt for custom layout
-    ];
-  };
-
-  # more ccache
-  nixpkgs.overlays = [
-    (final: prev: {
-      xorg = prev.xorg // {
-        setxkbmap = prev.xorg.setxkbmap.override { stdenv = final.ccacheStdenv; };
-        xkbcomp = prev.xorg.xkbcomp.override { stdenv = final.ccacheStdenv; };
-        xorgserver = prev.xorg.xorgserver.override { stdenv = final.ccacheStdenv; };
-      };
-    })
-  ];
 }
