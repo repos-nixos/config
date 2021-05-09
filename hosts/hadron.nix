@@ -29,6 +29,12 @@
 
   boot.initrd.kernelModules = [ "dm-raid" ];
 
+  fileSystems."/tmp" = {
+    device = "tmpfs";
+    fsType = "tmpfs";
+    options = [ "size=16G" ];
+  };
+
   networking.hostName = "hadron"; # Define your hostname.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.

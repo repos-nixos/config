@@ -33,11 +33,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/d6b07c1f-5865-4bae-8a97-e653c1d1e400";
-      fsType = "ext4";
-    };
-
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/fb7bc4c9-a8e7-4f21-9d09-5c8ffa8d6265";
       fsType = "ext4";
