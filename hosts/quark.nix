@@ -29,9 +29,6 @@
     setLdLibraryPath = true;
     package = pkgs.mesa_drivers;
   };
-  hardware.deviceTree = {
-    overlays = [ "${pkgs.device-tree_rpi.overlays}/vc4-fkms-v3d.dtbo" ];
-  };
 
   services.xserver.videoDrivers = [ "modesetting" ];
   boot.loader.raspberryPi.firmwareConfig = ''
