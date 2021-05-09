@@ -1,7 +1,6 @@
 { pkgs, suites, ... }: {
   imports =
-    suites.laptop ++
-    suites.gnome3 ++
+    suites.base ++
     [
       quark/hardware-configuration.nix
     ];
