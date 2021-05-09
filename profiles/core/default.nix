@@ -26,38 +26,6 @@ in
       PAGER = "less";
     };
 
-    systemPackages = with pkgs; [
-      binutils
-      coreutils
-      curl
-      direnv
-      dnsutils
-      dosfstools
-      fd
-      file
-      git
-      gptfdisk
-      gotop
-      iputils
-      jq
-      less
-      libarchive
-      manix
-      moreutils
-      nix-index
-      nmap
-      pass-otp
-      prs
-      python3
-      qrencode
-      ripgrep
-      skim
-      tealdeer
-      usbutils
-      utillinux
-      whois
-    ];
-
     shellAliases =
       let ifSudo = lib.mkIf config.security.sudo.enable;
       in
@@ -68,18 +36,11 @@ in
         "...." = "cd ../../..";
         "....." = "cd ../../../..";
 
-        # bsdtar (multi-format archive)
-        tar = "bsdtar";
-
         e = "$EDITOR";
 
         l = pkgs.writers.writeC "l" { } ./l.c;
 
-        # git
-        g = "git";
-
         # grep
-        grep = "rg";
         gi = "grep -i";
 
         # internet ip
@@ -96,9 +57,6 @@ in
         srch = "ns nixos";
         orch = "ns override";
         nrb = ifSudo "sudo nixos-rebuild";
-        mn = ''
-          manix "" | grep '^# ' | sed 's/^# \(.*\) (.*/\1/;s/ (.*//;s/^# //' | sk --preview="manix '{}'" | xargs manix
-        '';
 
         # fix nixos-option
         nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
@@ -106,9 +64,6 @@ in
         # sudo
         s = ifSudo (pkgs.writers.writeC "s" { } ./s.c);
         se = ifSudo "sudoedit";
-
-        # top
-        top = "gotop";
 
         # systemd
         ctl = "systemctl";
@@ -119,9 +74,6 @@ in
         up = ifSudo "s systemctl start";
         dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
-
-        # Python
-        py = "python3";
       };
   };
 
