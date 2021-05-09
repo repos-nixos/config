@@ -1,9 +1,9 @@
 # based on https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/installer/cd-dvd/sd-image-raspberrypi4.nix
 
 { config, lib, modulesPath, pkgs, ... }: {
-  imports = [
+  imports = suites.base ++ [
     ../users/root
-    ../users/louis
+    ../users/nixos
     "${modulesPath}/installer/cd-dvd/sd-image.nix"
   ];
 

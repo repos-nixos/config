@@ -68,7 +68,7 @@
         };
         profiles = [ ./profiles ./users ];
         suites = { profiles, users, ... }: with profiles; rec {
-          base = [ core users.nixos users.root ];
+          base = [ core users.root ];
           gnome = [ graphical graphical.gnome ];
           allTools = with tools; [
             tools # the root
