@@ -6,6 +6,7 @@ channels: final: prev: {
     android-studio
     brave
     cachix
+    chia
     dhall
     discord
     element-desktop
