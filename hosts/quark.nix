@@ -1,6 +1,6 @@
 { pkgs, suites, ... }: {
   imports =
-    suites.base ++
+    suites.workstation ++
     [
       quark/hardware-configuration.nix
     ];
