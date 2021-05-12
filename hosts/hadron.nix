@@ -15,6 +15,7 @@
       ../profiles/torbox
       ../profiles/daemons/libvirt
       ../profiles/daemons/transmission
+      ../profiles/daemons/chia
       ../profiles/hardware/nvidiaLegacy390
       ../profiles/tools/teck-programmer
       hardware.common-cpu-intel-sandy-bridge
@@ -28,6 +29,10 @@
   boot.loader.grub.efiInstallAsRemovable = true;
 
   boot.initrd.kernelModules = [ "dm-raid" ];
+
+  fileSystems."/var/tmp/chia" = {
+    device = "/dev/Storage/ChiaTmp";
+  };
 
   fileSystems."/tmp" = {
     device = "tmpfs";
