@@ -8,6 +8,7 @@
       # Include the results of the hardware scan.
       hadronsson/hardware-configuration.nix
       hardware.common-cpu-intel-sandy-bridge
+      ../profiles/daemons/chia
       ../profiles/daemons/postgresql
       ../profiles/tools/teck-programmer
     ];
@@ -18,6 +19,11 @@
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "hadronsson"; # Define your hostname.
+
+  fileSystems."/var/tmp/chia" = {
+    device = "/dev/HardDisk/ChiaTmp";
+    fsType = "ext4";
+  };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
