@@ -1,6 +1,6 @@
 { pkgs, suites, ... }: {
   imports =
-    suites.workstation ++
+    suites.base ++
     [
       quark/hardware-configuration.nix
       ../profiles/daemons/chia-harvester
@@ -15,11 +15,11 @@
 
   boot.kernelPackages = pkgs.linuxPackages_hardened;
 
-  swapDevices = [ {
+  swapDevices = [{
     device = "/var/swapfile";
     size = 8192;
     randomEncryption.enable = true;
-  } ];
+  }];
 
   # Required for the Wireless firmware
   hardware.enableRedistributableFirmware = true;
