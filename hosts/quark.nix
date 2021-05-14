@@ -3,6 +3,7 @@
     suites.workstation ++
     [
       quark/hardware-configuration.nix
+      ../profiles/daemons/chia-harvester
     ];
 
   nixpkgs.system = "aarch64-linux";
