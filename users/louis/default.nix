@@ -5,12 +5,14 @@
 {
   home-manager.users.louis = {
     imports = [
+      ../profiles/autojump
       ../profiles/android-development
       ../profiles/browserpass
       ../profiles/brave
       ../profiles/direnv
       ../profiles/firefox
       ../profiles/firefox/captive-browser
+      ../profiles/fish
       ../profiles/git
       ../profiles/spacevim
       ../profiles/ssh

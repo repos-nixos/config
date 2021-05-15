@@ -72,6 +72,7 @@
           gnome = [ graphical graphical.gnome ];
           allTools = with tools; [
             tools # the root
+            gnupg
             jdk
             podman
             wireshark
