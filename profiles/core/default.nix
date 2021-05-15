@@ -79,6 +79,7 @@ in
     # simple shortcut shell scripts
     systemPackages = pkgs.lib.mapAttrsToList (name: file: pkgs.writeShellScriptBin name (builtins.readFile file)) {
       l = ./l.sh;
+      o = ./o.sh;
       s = ./s.sh;
     };
   };
