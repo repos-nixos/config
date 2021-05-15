@@ -38,8 +38,6 @@ in
 
         e = "$EDITOR";
 
-        l = pkgs.writers.writeC "l" { } ./l.c;
-
         # grep
         gi = "grep -i";
 
@@ -62,7 +60,6 @@ in
         nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
 
         # sudo
-        s = ifSudo (pkgs.writers.writeC "s" { } ./s.c);
         se = ifSudo "sudoedit";
 
         # systemd
@@ -74,7 +71,16 @@ in
         up = ifSudo "s systemctl start";
         dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
+
+        # default conflicts w/ shortcut
+        l = null;
       };
+
+    # simple shortcut shell scripts
+    systemPackages = pkgs.lib.mapAttrsToList (name: file: pkgs.writeShellScriptBin name (builtins.readFile file)) {
+      l = ./l.sh;
+      s = ./s.sh;
+    };
   };
 
   fonts = {
