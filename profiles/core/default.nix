@@ -129,6 +129,9 @@ in
 
   };
 
+  # not working with a flakified system
+  programs.command-not-found.enable = false;
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
