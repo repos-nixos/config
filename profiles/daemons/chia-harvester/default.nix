@@ -6,6 +6,11 @@
   containers.chia-harvester = {
     autoStart = true;
     config = { ... }: {
+      # FIXME: this is a copy-paste of profiles.core.minimalize
+      security.sudo.enable = false;
+      security.polkit.enable = false;
+      environment.defaultPackages = [ ];
+
       users.users.chia = {
         isNormalUser = true;
         packages = with pkgs; [

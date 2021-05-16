@@ -4,6 +4,7 @@
     [
       quark/hardware-configuration.nix
       ../profiles/daemons/chia-harvester
+      ../profiles/core/minimalize
     ];
 
   nixpkgs.system = "aarch64-linux";
