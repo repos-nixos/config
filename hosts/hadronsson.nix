@@ -8,7 +8,7 @@
       # Include the results of the hardware scan.
       hadronsson/hardware-configuration.nix
       hardware.common-cpu-intel-sandy-bridge
-      ../profiles/daemons/chia
+      ../profiles/daemons/chia-ephemeral
       ../profiles/daemons/postgresql
       ../profiles/tools/teck-programmer
     ];

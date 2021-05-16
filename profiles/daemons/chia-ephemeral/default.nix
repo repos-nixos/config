@@ -3,14 +3,11 @@
 # the Chia daemon, isolated in an ephemeral container
 
 {
-  containers.chia = {
+  containers.chia-ephemeral = {
     ephemeral = true;
     config = { ... }: {
       users.users.chia = {
         isNormalUser = true;
-        openssh.authorizedKeys.keyFiles = [
-          users/louis/id_gpgcard.pub
-        ];
         packages = with pkgs; [
           chia
         ];

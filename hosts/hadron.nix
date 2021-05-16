@@ -15,7 +15,7 @@
       ../profiles/torbox
       ../profiles/daemons/libvirt
       ../profiles/daemons/transmission
-      ../profiles/daemons/chia
+      ../profiles/daemons/chia-ephemeral
       ../profiles/hardware/nvidiaLegacy390
       ../profiles/tools/teck-programmer
       hardware.common-cpu-intel-sandy-bridge
