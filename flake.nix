@@ -4,7 +4,7 @@
   inputs =
     {
       nixos.url = "nixpkgs/nixos-unstable";
-      latest.url = "github:lourkeur/nixpkgs/master-chia";
+      latest.url = "github:lourkeur/nixpkgs";
       digga.url = "github:divnix/digga";
 
       darwin.url = "github:LnL7/nix-darwin";
