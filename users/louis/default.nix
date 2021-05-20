@@ -50,6 +50,7 @@
 
     packages = with pkgs; [
       dbeaver
+      element-desktop
       multimc
       nixpkgs-review
       nixpkgs-fmt
