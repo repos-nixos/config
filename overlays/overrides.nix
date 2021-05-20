@@ -9,6 +9,7 @@ channels: final: prev: {
     chia
     dhall
     discord
+    dbeaver
     element-desktop
     gotop
     manix
@@ -21,7 +22,8 @@ channels: final: prev: {
     spacevim
     starship
     tipp10
-    tor-browser-bundle-bin;
+    tor-browser-bundle-bin
+    tup;
 
 
   haskellPackages = prev.haskellPackages.override {
