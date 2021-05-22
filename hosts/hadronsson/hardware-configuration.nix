@@ -14,18 +14,32 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f2cab446-4585-4762-8187-6ab930e4f523";
-      fsType = "btrfs";
+    { device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "mode=755" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/d5101aaf-1628-4639-ae86-d962e3446904";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/f2cab446-4585-4762-8187-6ab930e4f523";
+      fsType = "btrfs";
+      options = [ "subvol=boot" ];
     };
 
   fileSystems."/home/louis" =
     { device = "/dev/disk/by-uuid/4d49a408-1391-4528-bebe-f6d58c2401f9";
       fsType = "ext4";
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/f2cab446-4585-4762-8187-6ab930e4f523";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+  fileSystems."/persist" =
+    { device = "/dev/disk/by-uuid/f2cab446-4585-4762-8187-6ab930e4f523";
+      fsType = "btrfs";
+      options = [ "subvol=persist" ];
     };
 
   swapDevices =

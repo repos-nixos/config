@@ -24,6 +24,18 @@
     fsType = "ext4";
   };
 
+  environment.persistence."/persist" = {
+    directories = [
+      "/var/log"
+      "/var/lib/systemd/coredump"
+      "/etc/ssh"
+    ];
+    files = [
+      "/etc/nix/key.private"
+    ];
+  };
+  fileSystems."/persist".neededForBoot = true;
+
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
