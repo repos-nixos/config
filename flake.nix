@@ -3,7 +3,7 @@
 
   inputs =
     {
-      nixos.url = "nixpkgs/nixos-unstable";
+      nixos.url = "nixpkgs/nixos-21.05";
       latest.url = "github:lourkeur/nixpkgs";
       digga.url = "github:divnix/digga";
 
