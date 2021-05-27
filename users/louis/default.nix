@@ -54,6 +54,7 @@
       multimc
       nixpkgs-review
       nixpkgs-fmt
+      sqldeveloper
       tipp10
     ];
 
