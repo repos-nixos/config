@@ -107,7 +107,9 @@
 
       home = {
         modules = ./users/modules/module-list.nix;
-        externalModules = [ ];
+        externalModules = [
+          "${impermanence}/home-manager.nix"
+        ];
         profiles = [ ./users/profiles ];
         suites = { profiles, ... }: with profiles; rec {
           base = [ direnv git ];
