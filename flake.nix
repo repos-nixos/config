@@ -62,9 +62,11 @@
         };
 
         imports = [ (digga.lib.importers.hosts ./hosts) ];
-        hosts = {
+        hosts = with nixos-hardware.nixosModules; {
           /* set host specific properties here */
           NixOS = { };
+          hadron.modules = [ common-cpu-intel-sandy-bridge ];
+          hadronsson.modules = [ common-cpu-intel-sandy-bridge ];
         };
         profiles = [ ./profiles ./users ];
         suites = { profiles, users, ... }: with profiles; rec {

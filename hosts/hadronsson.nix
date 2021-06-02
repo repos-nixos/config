@@ -7,7 +7,6 @@
     [
       # Include the results of the hardware scan.
       hadronsson/hardware-configuration.nix
-      hardware.common-cpu-intel-sandy-bridge
       ../profiles/daemons/chia-ephemeral
       ../profiles/tools/teck-programmer
     ];

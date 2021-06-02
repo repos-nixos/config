@@ -19,7 +19,6 @@
       ../profiles/daemons/postgresql
       ../profiles/hardware/nvidiaLegacy390
       ../profiles/tools/teck-programmer
-      hardware.common-cpu-intel-sandy-bridge
     ];
 
   # GRUB
