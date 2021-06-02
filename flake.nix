@@ -67,6 +67,10 @@
           NixOS = { };
           hadron.modules = [ common-cpu-intel-sandy-bridge ];
           hadronsson.modules = [ common-cpu-intel-sandy-bridge ];
+          quark.system = "aarch64-linux";
+          quark.modules = [ nixos-hardware.nixosModules.raspberry-pi-4 ];
+          rpi4-bootstrap.system = "aarch64-linux";
+          rpi4-bootstrap.modules = [ nixos-hardware.nixosModules.raspberry-pi-4 ];
         };
         profiles = [ ./profiles ./users ];
         suites = { profiles, users, ... }: with profiles; rec {
