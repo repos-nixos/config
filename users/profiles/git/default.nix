@@ -28,6 +28,7 @@
     git-subrepo
     git-secret
     git-crypt
+    git-aggregator
     tig
   ];
 }
