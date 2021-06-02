@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 # settings to try and minimize disk footprint
 
 {
@@ -7,4 +9,11 @@
   security.polkit.enable = false;
 
   environment.defaultPackages = [ ];
+
+  environment.systemPackages = [
+    # a fake sudo
+    (pkgs.writeShellScriptBin "sudo" ''
+      exec "$@"
+    '')
+  ];
 }
