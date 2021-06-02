@@ -7,8 +7,6 @@
       ../profiles/core/minimalize
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_hardened;
-
   swapDevices = [{
     device = "/var/swapfile";
     size = 8192;
