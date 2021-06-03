@@ -14,6 +14,7 @@
     home.persistence."/persist/home/minecraft" = {
       directories = [
         ".local/share/multimc"
+        ".config/lxqt"
       ];
     };
 
