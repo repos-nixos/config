@@ -17,9 +17,12 @@
       ../profiles/daemons/transmission
       ../profiles/daemons/chia-ephemeral
       ../profiles/daemons/postgresql
-      ../profiles/hardware/nvidiaLegacy390
       ../profiles/tools/teck-programmer
     ];
+
+  specialisation.nvidia.configuration.imports = [
+    ../profiles/hardware/nvidiaLegacy390
+  ];
 
   # GRUB
   boot.loader.grub.enable = true;
