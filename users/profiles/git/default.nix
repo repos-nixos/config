@@ -6,6 +6,7 @@
     package = pkgs.gitFull;
 
     userName = "Louis Bettens";
+    userEmail = "louis@bettens.info";
     aliases = {
       a = "add";
       b = "!tig blame";
