@@ -4,8 +4,10 @@
     [
       quark/hardware-configuration.nix
       ../profiles/daemons/chia-harvester
-      ../profiles/core/minimalize
     ];
+
+  environment.minimalize.enable = true;
+  environment.minimalize.fakeSudo = true;
 
   swapDevices = [{
     device = "/var/swapfile";
