@@ -5,7 +5,7 @@
     {
       nixos.url = "nixpkgs/nixos-21.05";
       latest.url = "github:lourkeur/nixpkgs";
-      digga.url = "github:divnix/digga";
+      digga.url = "github:divnix/digga/0cbc8bd4defee8fddc0c582556267bd2c1c02704";
 
       darwin.url = "github:LnL7/nix-darwin";
       darwin.inputs.nixpkgs.follows = "latest";
