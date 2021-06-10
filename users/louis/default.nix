@@ -14,6 +14,8 @@
       ../profiles/firefox/captive-browser
       ../profiles/fish
       ../profiles/git
+      ../profiles/gnome/shell.nix
+      ../profiles/gnome/yaru.nix
       ../profiles/spacevim
       ../profiles/ssh
       ../profiles/xcape
