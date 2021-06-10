@@ -12,8 +12,13 @@
         echo -n (prompt_hostname)": "
       end
 
-      # just show the abbreviated current working directory
+      # show the abbreviated current working directory
       echo (prompt_pwd)
+
+      # show the running command
+      set command (status current-command)
+      test $command = fish && set -e command
+      echo -n " ["$command]
     '';
   };
 }
