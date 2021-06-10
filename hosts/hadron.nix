@@ -51,6 +51,9 @@
   networking.useDHCP = false;
   networking.interfaces.eno1.useDHCP = true;
 
+  # Aliases for imperative guests.
+  networking.hosts."192.168.122.38" = [ "minecraft" ];
+
   environment.persistence."/nix/persist" = {
     directories = [
       "/var/lib/libvirt"
