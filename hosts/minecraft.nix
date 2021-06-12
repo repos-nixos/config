@@ -9,6 +9,7 @@
       ../users/minecraft
       ../users/minecraft/singleUser
       ../profiles/tools/jdk
+      ../profiles/daemons/tor
     ];
 
   # Use the GRUB 2 boot loader.
