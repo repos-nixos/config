@@ -11,13 +11,6 @@
       ../profiles/git
     ];
 
-    home.persistence."/persist/home/minecraft" = {
-      directories = [
-        ".local/share/multimc"
-        ".config/lxqt"
-      ];
-    };
-
     home.stateVersion = "20.09";
   };
 

@@ -23,6 +23,8 @@
     directories = [
       "/var/log"
       "/var/lib/systemd/coredump"
+      "/home/minecraft/.local/share/multimc"
+      "/home/minecraft/.config/lxqt"
     ];
     files = [
       "/etc/machine-id"
