@@ -140,8 +140,8 @@ in
   security.pam.enableSSHAgentAuth = true;
 
   nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 2d";
-  nix.gc.dates = "Sat 03:15";
+  nix.gc.options = "--delete-older-than 6d";
+  nix.gc.dates = "03:15";
   systemd.timers.nix-gc.timerConfig.Persistent = true;
 
   systemd.services.nix-gc.serviceConfig = {
