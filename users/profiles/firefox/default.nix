@@ -22,6 +22,12 @@
 
         # disable built-in password management
         "signon.rememberSignons" = false;
+
+        # Ctrl+Tab cycles through tabs in recently used order
+        "browser.ctrlTab.sortByRecentlyUsed" = true;
+
+        # Search for text when I start typing
+        "accessibility.typeaheadfind" = true;
       };
     };
   };
