@@ -7,7 +7,6 @@
       # Include the results of the hardware scan.
       minecraft/hardware-configuration.nix
       ../users/minecraft
-      ../users/minecraft/singleUser
       ../profiles/tools/jdk
       ../profiles/daemons/tor
     ];
@@ -41,6 +40,8 @@
   networking.interfaces.enp1s0.useDHCP = true;
 
   nix.allowedUsers = [ "minecraft" ];
+
+  services.autoLogin.user = "minecraft";
 
   services.btrfs.autoScrub = {
     enable = true;
