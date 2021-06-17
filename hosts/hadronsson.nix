@@ -25,6 +25,7 @@
 
   environment.persistence."/persist" = {
     directories = [
+      "/var/db/sudo"
       "/var/log"
       "/var/lib/systemd/coredump"
       "/etc/ssh"
