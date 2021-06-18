@@ -8,7 +8,7 @@
       "hkgfoiooedgoejojocmhlaklaeopbecg" # Picture-in-picture by Google
       "pbcodcjpfjdpcineamnnmbkkmkdpajjg" # Link to text fragment by Google
       "fllaojicojecljbmefodhfapmkghcbnh" # Google Analytics opt-out
-      "gbiekjoijknlhijdjbaadobpkdhmoebb" # Google Adds opt-out
+      "gbiekjoijknlhijdjbaadobpkdhmoebb" # Google Ads opt-out
     ];
   };
 }
