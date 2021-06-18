@@ -18,11 +18,6 @@
 
   networking.hostName = "hadronsson"; # Define your hostname.
 
-  fileSystems."/var/tmp/chia" = {
-    device = "/dev/HardDisk/ChiaTmp";
-    fsType = "ext4";
-  };
-
   environment.persistence."/persist" = {
     directories = [
       "/var/db/sudo"

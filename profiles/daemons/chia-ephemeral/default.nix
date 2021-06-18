@@ -14,6 +14,7 @@
       };
     };
     bindMounts = {
+      # To be used as at temporary plotting directory, should be a fast disk
       "/var/tmp/chia" = {
         hostPath = "/var/tmp/chia";
         isReadOnly = false;

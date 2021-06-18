@@ -33,10 +33,6 @@
 
   boot.initrd.kernelModules = [ "dm-raid" ];
 
-  fileSystems."/var/tmp/chia" = {
-    device = "/dev/Storage/ChiaTmp";
-  };
-
   fileSystems."/tmp" = {
     device = "tmpfs";
     fsType = "tmpfs";
