@@ -9,6 +9,7 @@
       hadronsson/hardware-configuration.nix
       ../profiles/daemons/chia-ephemeral
       ../profiles/tools/teck-programmer
+      ../profiles/daemons/libvirt
     ];
 
   # Use the GRUB 2 boot loader.
@@ -22,6 +23,7 @@
     directories = [
       "/var/db/sudo"
       "/var/log"
+      "/var/lib/libvirt"
       "/var/lib/systemd/coredump"
       "/etc/ssh"
     ];
