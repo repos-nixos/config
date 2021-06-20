@@ -16,7 +16,6 @@
       ../profiles/daemons/libvirt
       ../profiles/daemons/transmission
       ../profiles/daemons/chia-ephemeral
-      ../profiles/daemons/postgresql
       ../profiles/tools/teck-programmer
     ];
 
