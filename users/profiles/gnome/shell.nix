@@ -3,10 +3,10 @@
 # tweaks for my Gnome Desktop
 
 let extensions = with pkgs.gnomeExtensions; [
-  gtk-title-bar
-  hide-activities-button
+  gnome-shell-extension-gtk-title-bar
+  gnome-shell-extension-hide-activities-button
   hot-edge
-  removable-drive-menu
+  gnome-shell-extension-removable-drive-menu
 ];
 
 in
