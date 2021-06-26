@@ -12,6 +12,8 @@
       home.url = "github:nix-community/home-manager";
       home.inputs.nixpkgs.follows = "nixos";
       impermanence.url = "github:nix-community/impermanence";
+      miniguest.url = "github:lourkeur/miniguest";
+      miniguest.inputs.nixpkgs.follows = "nixos";
       naersk.url = "github:nmattia/naersk";
       naersk.inputs.nixpkgs.follows = "latest";
       nixos-hardware.url = "github:nixos/nixos-hardware";
@@ -20,7 +22,7 @@
       pkgs.inputs.nixpkgs.follows = "nixos";
     };
 
-  outputs = inputs@{ self, pkgs, digga, nixos, home, impermanence, nixos-hardware, nur, ... }:
+  outputs = inputs@{ self, pkgs, digga, nixos, home, impermanence, miniguest, nixos-hardware, nur, ... }:
     digga.lib.mkFlake {
       inherit self inputs;
 
@@ -46,6 +48,7 @@
             our = self.lib;
           });
         })
+        miniguest.overlay
       ];
 
       nixos = {
@@ -57,6 +60,7 @@
             { _module.args.ourLib = self.lib; }
             home.nixosModules.home-manager
             impermanence.nixosModules.impermanence
+            miniguest.nixosModules.miniguest
             ./modules/customBuilds.nix
           ];
         };

@@ -56,6 +56,21 @@
         "type": "github"
       }
     },
+    "devshell_2": {
+      "locked": {
+        "lastModified": 1624738949,
+        "narHash": "sha256-62pEoJ1jQARZ/fAuTw67j8MqTShd8BBm+ZoSs7aeJus=",
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "d4be23644b0b6471d556503e03cae3215d3f9cf6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
+        "type": "github"
+      }
+    },
     "digga": {
       "inputs": {
         "deploy": "deploy",
@@ -102,6 +117,21 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "rev": "b543720b25df6ffdfcf9227afafc5b8c1fabfae8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
         "type": "github"
       },
       "original": {
@@ -157,6 +187,28 @@
       "original": {
         "owner": "lourkeur",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "miniguest": {
+      "inputs": {
+        "devshell": "devshell_2",
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "lastModified": 1624817127,
+        "narHash": "sha256-n+f8L/CJ946zLI6Qn2VmaoPxTayyMvQqkjpzQvWJ22U=",
+        "owner": "lourkeur",
+        "repo": "miniguest",
+        "rev": "6c4055fce7b1f69d7324483bbf94858eacdcf679",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lourkeur",
+        "repo": "miniguest",
         "type": "github"
       }
     },
@@ -314,6 +366,7 @@
         "home": "home",
         "impermanence": "impermanence",
         "latest": "latest",
+        "miniguest": "miniguest",
         "naersk": "naersk_2",
         "nixos": "nixos",
         "nixos-hardware": "nixos-hardware",

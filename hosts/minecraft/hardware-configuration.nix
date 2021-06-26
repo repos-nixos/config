@@ -21,25 +21,11 @@
       options = [ "defaults" "mode=755" ];
     };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/2b6826a5-0c78-45c4-84ea-f965e5238647";
-      fsType = "btrfs";
-      options = [ "subvol=boot" ];
-    };
-
   fileSystems."/persist" =
     {
       device = "/dev/disk/by-uuid/2b6826a5-0c78-45c4-84ea-f965e5238647";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
-    };
-
-  fileSystems."/nix" =
-    {
-      device = "/dev/disk/by-uuid/2b6826a5-0c78-45c4-84ea-f965e5238647";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
     };
 
   swapDevices = [ ];

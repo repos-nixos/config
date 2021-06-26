@@ -11,10 +11,9 @@
       ../profiles/daemons/tor
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
+  # Use miniguest
+  boot.loader.grub.enable = false;
+  boot.miniguest.enable = true;
 
   networking.hostName = "minecraft"; # Define your hostname.
 
