@@ -1,0 +1,20 @@
+# shell abbreviations, get turned into aliases on shells that don't support it.
+
+g = "git"
+ga = "git add"
+gc = "git commit"
+gl = "git log"
+gs = "git show"
+gst = "git status"
+gsw = "git switch"
+gz = "git stash"
+
+n = "nix"
+nf = "nix flake"
+nb = "nix build"
+nd = "nix develop"
+np = "nix profile"
+nr = "nix run"
+ns = "nix shell"
+n-b = "nix-build"
+n-s = "nix-shell"

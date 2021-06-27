@@ -45,15 +45,6 @@ in
         myip = "dig +short myip.opendns.com @208.67.222.222 2>&1";
 
         # nix
-        n = "nix";
-        np = "n profile";
-        ni = "np install";
-        nr = "np remove";
-        ns = "n search --no-update-lock-file";
-        nf = "n flake";
-        nepl = "n repl '<nixpkgs>'";
-        srch = "ns nixos";
-        orch = "ns override";
         nrb = ifSudo "sudo nixos-rebuild";
 
         # fix nixos-option
@@ -63,13 +54,7 @@ in
         se = ifSudo "sudoedit";
 
         # systemd
-        ctl = "systemctl";
         stl = ifSudo "s systemctl";
-        utl = "systemctl --user";
-        ut = "systemctl --user start";
-        un = "systemctl --user stop";
-        up = ifSudo "s systemctl start";
-        dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
 
         # default conflicts w/ shortcut

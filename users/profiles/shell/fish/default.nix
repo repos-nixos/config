@@ -2,10 +2,7 @@
   programs.fish = {
     enable = true;
     promptInit = builtins.readFile ./prompt_init.fish;
-    shellAbbrs = {
-      g = "git";
-      n = "nix";
-    };
+    shellAbbrs = with builtins; fromTOML (readFile ../abbrevs.toml);
     functions.fish_title = ''
       # prefix with remote host if applicable
       if set -q SSH_TTY
