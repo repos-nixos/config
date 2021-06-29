@@ -7,7 +7,7 @@
     imports = [
       ../profiles/autojump
       ../profiles/firefox
-      ../profiles/fish
+      ../profiles/shell/fish
       ../profiles/git
     ];
 
