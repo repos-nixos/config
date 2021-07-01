@@ -24,6 +24,7 @@
       less
       libarchive
       manix
+      miniguest
       moreutils
       nix-index
       nmap
