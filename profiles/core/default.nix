@@ -48,7 +48,7 @@ in
         nrb = ifSudo "sudo nixos-rebuild";
 
         # fix nixos-option
-        nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
+        nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat/nixos";
 
         # sudo
         se = ifSudo "sudoedit";
