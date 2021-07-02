@@ -49,6 +49,7 @@
       "/var/log"
       "/var/lib/libvirt"
       "/var/lib/systemd/coredump"
+      "/var/lib/transmission"
       "/etc/ssh"
     ];
     files = [

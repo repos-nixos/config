@@ -36,11 +36,6 @@
       fsType = "vfat";
     };
 
-  fileSystems."/var/lib/transmission" =
-    { device = "/dev/disk/by-uuid/3dbe6b94-7de6-466c-b3cf-de71c61e892b";
-      fsType = "ext4";
-    };
-
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/fb7bc4c9-a8e7-4f21-9d09-5c8ffa8d6265";
       fsType = "ext4";
