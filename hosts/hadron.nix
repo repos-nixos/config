@@ -32,12 +32,6 @@
 
   boot.initrd.kernelModules = [ "dm-raid" ];
 
-  fileSystems."/tmp" = {
-    device = "tmpfs";
-    fsType = "tmpfs";
-    options = [ "size=16G" ];
-  };
-
   networking.hostName = "hadron"; # Define your hostname.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -49,11 +43,19 @@
   # Aliases for imperative guests.
   networking.hosts."192.168.122.38" = [ "minecraft" ];
 
-  environment.persistence."/nix/persist" = {
+  environment.persistence."/persist" = {
     directories = [
+      "/var/db/sudo"
+      "/var/log"
       "/var/lib/libvirt"
+      "/var/lib/systemd/coredump"
+      "/etc/ssh"
+    ];
+    files = [
+      "/etc/nix/key.private"
     ];
   };
+  fileSystems."/persist".neededForBoot = true;
 
   services.earlyoom.enable = true;
 
