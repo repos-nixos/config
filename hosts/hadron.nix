@@ -51,6 +51,7 @@
       "/var/lib/systemd/coredump"
       "/var/lib/transmission"
       "/etc/ssh"
+      "/etc/miniguests"
     ];
     files = [
       "/etc/nix/key.private"
