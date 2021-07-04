@@ -7,6 +7,7 @@
     [
       # Include the results of the hardware scan.
       hadronsson/hardware-configuration.nix
+      ../profiles/hardware/persistence
       ../profiles/daemons/chia-ephemeral
       ../profiles/tools/teck-programmer
       ../profiles/daemons/libvirt
@@ -18,20 +19,6 @@
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "hadronsson"; # Define your hostname.
-
-  environment.persistence."/persist" = {
-    directories = [
-      "/var/db/sudo"
-      "/var/log"
-      "/var/lib/libvirt"
-      "/var/lib/systemd/coredump"
-      "/etc/ssh"
-    ];
-    files = [
-      "/etc/nix/key.private"
-    ];
-  };
-  fileSystems."/persist".neededForBoot = true;
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
