@@ -9,7 +9,7 @@
 
       darwin.url = "github:LnL7/nix-darwin";
       darwin.inputs.nixpkgs.follows = "latest";
-      home.url = "github:nix-community/home-manager";
+      home.url = "github:nix-community/home-manager/release-21.05";
       home.inputs.nixpkgs.follows = "nixos";
       impermanence.url = "github:nix-community/impermanence";
       miniguest.url = "github:lourkeur/miniguest";
