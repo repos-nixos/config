@@ -138,8 +138,6 @@ in
     after = [ "nix-gc.service" ];
   };
 
-  services.earlyoom.enable = true;
-
   services.openssh = {
     enable = true;
     startWhenNeeded = true;

@@ -44,8 +44,6 @@
   # Aliases for imperative guests.
   networking.hosts."192.168.122.38" = [ "minecraft" ];
 
-  services.earlyoom.enable = true;
-
   hardware.nvidia.prime = {
     intelBusId = "PCI:00:02:0";
     nvidiaBusId = "PCI:01:00:0";
