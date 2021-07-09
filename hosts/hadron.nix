@@ -15,7 +15,7 @@
       ../profiles/torbox
       ../profiles/daemons/libvirt
       ../profiles/daemons/transmission
-      ../profiles/daemons/chia-ephemeral
+      ../profiles/daemons/chia-wallet
       ../profiles/hardware/persistence
       ../profiles/tools/teck-programmer
     ];

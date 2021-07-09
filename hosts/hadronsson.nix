@@ -8,7 +8,6 @@
       # Include the results of the hardware scan.
       hadronsson/hardware-configuration.nix
       ../profiles/hardware/persistence
-      ../profiles/daemons/chia-ephemeral
       ../profiles/tools/teck-programmer
       ../profiles/daemons/libvirt
     ];
