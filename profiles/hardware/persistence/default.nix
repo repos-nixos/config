@@ -6,6 +6,7 @@
       "/var/lib/libvirt"
       "/var/lib/systemd/coredump"
       "/var/lib/transmission"
+      "/var/tmp"
       "/etc/ssh"
       "/etc/miniguests"
     ];
