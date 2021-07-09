@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-# the Chia daemon, isolated in an ephemeral container for the purpose of harvesting
+# the Chia daemon, isolated in an container for the purpose of farming
+#
+# NOTE: should have been called chia-farmer since it's not just a harvester
 
 {
   containers.chia-harvester = {
@@ -17,9 +19,9 @@
           chia
         ];
       };
-      systemd.services.chia-node = {
+      systemd.services.chia-farmer = {
         script = "${pkgs.chia}/bin/chia run_daemon";
-        postStart = "${pkgs.chia}/bin/chia start farmer";
+        postStart = "${pkgs.chia}/bin/chia start farmer-no-wallet";
         preStop = "${pkgs.chia}/bin/chia stop all";
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
@@ -28,11 +30,16 @@
           User = "chia";
         };
       };
-      networking.firewall.allowedTCPPorts = [ 8444 ];
+      networking.firewall.allowedTCPPorts = [ 8444 8449 ];
     };
-    forwardPorts = [{
-      hostPort = 8444;
-    }];
+    forwardPorts = [
+      {
+        hostPort = 8444;
+      }
+      {
+        hostPort = 8449;
+      }
+    ];
 
     bindMounts = {
       "/srv/chia" = {
@@ -41,4 +48,5 @@
       };
     };
   };
+  networking.firewall.allowedTCPPorts = [ 8444 8449 ];
 }
